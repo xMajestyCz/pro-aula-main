@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Paciente</title>
+    <meta http-equiv="Cache-Control" content="max-age=31536000">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar active">
+            <div class="menu-btn" id="btn-cerrar" style="display: none;">
+                <i class="ph-bold ph-caret-left"></i>
+            </div>
+            <div class="menu-btn" id="btn-abrir" style="display: block;">
+                <i class="ph-bold ph-caret-right"></i>
+            </div>
+            <div class="head">
+                <div class="user-img">
+                    <img src="" alt="">
+                </div>
+                <div class="user-details">
+                    <p class="title" id="rol">Administrador</p>
+                    <p class="name" id="usuarioLogged">Andrés</p>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#">
+                                <i class="icon ph ph-house"></i>
+                                <span class="text">Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon ph-bold ph ph-identification-card"></i>
+                                <span class="text" id="texto">Perfil</span>
+                                <i class="arrow ph-bold ph-caret-down"></i>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#" id="btn-section-add-doctor">
+                                        <i class="icon ph ph-user-list"></i>
+                                        <span class="text">Ver</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon ph ph-user-gear"></i>
+                                        <span class="text">Modificar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon ph-bold ph-notepad"></i>
+                                <span class="text">Citas</span>
+                                <i class="arrow ph-bold ph-caret-down"></i>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#" id="btn-section-add-recep">
+                                        <i class="icon ph ph-list-plus"></i>
+                                        <span class="text">Historial</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon ph ph-calendar-plus"></i>
+                                        <span class="text">Agendar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon ph ph-calendar-x"></i>
+                                        <span class="text">Cancelar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <i class="icon ph-bold ph ph-folder-user"></i>
+                                <span class="text">Informes</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <i class="icon ph-bold ph-bell-simple-ringing"></i>
+                                <span class="text">Notificaciones</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu">
+                    <p class="title">Ajustes</p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="icon ph-bold ph-gear"></i>
+                                <span class="text">Ajustes</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+                <p class="title">Cuenta</p>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="icon ph-bold ph-sign-out"></i>
+                            <span class="text">Cerrar Sesión</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <section class="section-doctor sect">
+            <div class="form-box">
+                <div class="form-value">
+                    <form action="" class="form">
+                        <header>Datos Paciente</header>
+                        <div class="all">
+                            <div class="left">
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-badge"></i>
+                                        <label class="name">Nombres</label>
+                                        <input type="text" placeholder="Escriba el Nombre" readonly>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-badge"></i>
+                                        <label class="lastname">Apellidos</label>
+                                        <input type="text" class="lastname-doctor" placeholder="Escriba los Apellidos"
+                                            required readonly>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-card"></i>
+                                        <label class="id">ID</label>
+                                        <input type="number" id="documento" placeholder="Número de Documento" readonly>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-cake"></i>
+                                        <label class="bthd">Fecha de Nacimiento</label>
+                                        <input type="date" readonly>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-envelope-simple"></i>
+                                        <label class="email">Email</label>
+                                        <input type="email" placeholder="Escriba el Email" readonly>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-phone"></i>
+                                        <label class="cel">Celular</label>
+                                        <input type="tel" placeholder="Digite el número de teléfono" readonly>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-first-aid"></i>
+                                        <label class="eps">EPS</label>
+                                        <div class="select-box">
+                                            <select readonly>
+                                                <option hidden>EPS</option>
+                                                <option>NUEVA EPS</option>
+                                                <option>SALUD TOTAL</option>
+                                                <option>MUTUAL SER </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-envelope-simple"></i>
+                                        <label class="email">Direccion</label>
+                                        <input type="text" placeholder="Escriba el Email" readonly>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-box">
+
+                                        <p><i class="ph ph-gender-intersex"></i> Genero : Masculino</p>
+                                    </div>
+                                    <div class="input-box">
+                                        <a class="link" href="#modal"><i class="ph ph-pen"></i>Cambiar contraseña</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="right">
+                                <div class="input-box">
+                                    <i class="ph ph-image"></i>
+                                    <label class="photo">Foto</label>
+                                    <div class="container-img">
+                                        <div class="img-area">
+                                            <i class="ph ph-cloud-arrow-up icon"></i>
+                                            <h3>Foto</h3>
+                                            <img id="uploaded-image" src="" alt="">
+                                        </div>
+                                        <input type="file" accept="image/*" id="input-file" hidden>
+                                        <div class="box-up-file">
+                                            <label class="up-file" for="file">Cambiar Imagen</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <div id="modal" class="modalmask">
+        <div class="modalbox resize">
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>Cambiar contraseña</h2>
+            <div class="divSuccess">
+                Contraseña cambiada
+            </div>
+            <div class="divError">
+                Error al cambiar contraseña
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Escriba su nueva contraseña">
+            </div>
+            <button>Cambiar</button>
+        </div>
+    </div>
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
+        integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw=="
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/paciente.js"></script>
+</body>
+
+</html>

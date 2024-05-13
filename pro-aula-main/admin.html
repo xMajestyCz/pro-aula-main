@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta http-equiv="Cache-Control" content="max-age=31536000">
+    <title>Administrador</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="div-message success">
+            <h2>Doctor guardado correctamente</h2>
+        </div>
+        <div class="sidebar active">
+            <div class="menu-btn" id="btn-cerrar" style="display: none;">
+                <i class="ph-bold ph-caret-left"></i>
+            </div>
+            <div class="menu-btn" id="btn-abrir" style="display: block;">
+                <i class="ph-bold ph-caret-right"></i>
+            </div>
+            <div class="head">
+                <div class="user-img">
+                    <img src="" alt="">
+                </div>
+                <div class="user-details">
+                    <p class="title">Administrador</p>
+                    <p class="name">Andrés</p>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="icon ph-bold ph-stethoscope"></i>
+                                <span class="text">Doctores</span>
+                                <i class="arrow ph-bold ph-caret-down"></i>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#" id="btn-section-add-doctor">
+                                        <i class="icon ph-bold ph-user-plus"></i>
+                                        <span class="text">Agregar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="btn-section-mod-doctor">
+                                        <i class="icon ph-bold ph-swap"></i>
+                                        <span class="text" >Modificar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon ph-bold ph-notepad"></i>
+                                <span class="text">Recepcionistas</span>
+                                <i class="arrow ph-bold ph-caret-down"></i>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#" id="btn-section-add-recep">
+                                        <i class="icon ph-bold ph-user-plus"></i>
+                                        <span class="text">Agregar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="btn-section-mod-recep">
+                                        <i class="icon ph-bold ph-swap"></i>
+                                        <span class="text">Modificar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon ph-bold ph-newspaper"></i>
+                                <span class="text">Noticias</span>
+                                <i class="arrow ph-bold ph-caret-down"></i>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#" id="btn-section-news">
+                                        <i class="icon ph-bold ph-list-plus"></i>
+                                        <span class="text">Agregar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon ph-bold ph-trash"></i>
+                                        <span class="text">Eliminar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon ph-bold ph-bell-simple-ringing"></i>
+                                <span class="text">Notificaciones</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu">
+                    <p class="title">Ajustes</p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="icon ph-bold ph-gear"></i>
+                                <span class="text">Ajustes</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+                <p class="title">Cuenta</p>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="icon ph-bold ph-sign-out"></i>
+                            <span class="text">Cerrar Sesión</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <section class="section-doctor sect">
+            <div class="form-box">
+                <div class="form-value">
+                    <form action="#" class="form" method="post" onsubmit="return false;">
+                        <header>Registrar Doctor</header>
+                        <div class="all">
+                            <div class="left">
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-badge"></i>
+                                        <label class="name">Nombres</label>
+                                        <input type="text" placeholder="Escriba los nombres" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-badge"></i>
+                                        <label class="lastname">Apellidos</label>
+                                        <input type="text" class="lastname-doctor" placeholder="Escriba los apellidos"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-card"></i>
+                                        <label class="id">ID</label>
+                                        <input type="number" id="documentoD" placeholder="Número de Documento" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-cake"></i>
+                                        <label class="bthd">Fecha de Nacimiento</label>
+                                        <input type="date" required>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-envelope-simple"></i>
+                                        <label class="email">Email</label>
+                                        <input type="email" placeholder="Escriba el Email" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-phone"></i>
+                                        <label class="cel">Celular</label>
+                                        <input type="tel" placeholder="Digite el número de teléfono" required>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-list-magnifying-glass"></i>
+                                        <label class="especial">Especialidad</label>
+                                        <div class="select-box">
+                                            <select>
+                                                <option hidden>Especialidad</option>
+                                                <option>Odontologia</option>
+                                                <option>Psicologia</option>
+                                                <option>Cardiologia</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-first-aid"></i>
+                                        <label class="eps">EPS</label>
+                                        <div class="select-box">
+                                            <select>
+                                                <option hidden>EPS</option>
+                                                <option>NUEVA EPS</option>
+                                                <option>SALUD TOTAL</option>
+                                                <option>MUTUAL SER </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gender-box">
+                                    <h3><i class="ph ph-gender-intersex"></i> Género</h3>
+                                    <div class="gender-option">
+                                        <div class="gender">
+                                            <input type="radio" id="check-male-doctor" name="genderD" value="M" required>
+                                            <label for="check-male-doctor">Masculino</label>
+                                        </div>
+                                        <div class="gender">
+                                            <input type="radio" id="check-female-doctor" name="genderD" value="F" required>
+                                            <label for="check-female-doctor">Femenino</label>
+                                        </div>
+                                        <div class="gender">
+                                            <input type="radio" id="check-other-doctor" name="genderD" value="O" required>
+                                            <label for="check-other-doctor">Otro</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="input-box">
+                                    <i class="ph ph-image"></i>
+                                    <label class="photo">Foto</label>
+                                    <div class="container-img">
+                                        <div class="img-area">
+                                            <i class="ph ph-cloud-arrow-up icon"></i>
+                                            <h3>Foto</h3>
+                                            <img id="uploaded-image-1" src="" alt="">
+                                        </div>
+                                        <input type="file" accept="image/*" id="input-file-1" hidden>
+                                        <div class="box-up-file">
+                                            <label class="up-file-1"  >Subir Imagen</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button onclick="cogerDatos()">Registrar Doctor</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="section-mod-doctor sect">
+            <div class="table-header">
+                <h1>Datos de Doctores</h1>
+                <div class="input-group-doctor">
+                    <input type="search" placeholder="Buscar Doctor">
+                    <i class="ph ph-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="table-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Email</th>
+                            <th>Celular</th>
+                            <th>Genero</th>
+                            <th>Especialidad</th>
+                            <th>EPS</th>
+                            <th>Datos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10419667</td>
+                            <td><img src="" alt="">Angolano Costureiro</td>
+                            <td>28</td>
+                            <td>angxvdvsavascgsdil.com</td>
+                            <td>346654523</td>
+                            <td>masculino</td>
+                            <td>locutor</td>
+                            <td>ytusae</td>
+                            <td>
+                                <a href="#" id="btn-sub-section-mod-doctor">Modificar</a>
+                                <a href="#">Eliminar</a>
+                            </td>
+                        <tr>
+                            <td>10419667</td>
+                            <td><img src="" alt="">Angolano Costureiro</td>
+                            <td>28</td>
+                            <td>angxvdvsavascgsdil.com</td>
+                            <td>346654523</td>
+                            <td>masculino</td>
+                            <td>locutor</td>
+                            <td>ytusae</td>
+                            <td>
+                                <a href="#" id="btn-sub-section-mod-doctor">Modificar</a>
+                                <a href="#">Eliminar</a>
+                            </td>
+                        <tr>
+                            <td>10419667</td>
+                            <td><img src="" alt="">Angolano Costureiro</td>
+                            <td>28</td>
+                            <td>angxvdvsavascgsdil.com</td>
+                            <td>346654523</td>
+                            <td>masculino</td>
+                            <td>locutor</td>
+                            <td>ytusae</td>
+                            <td>
+                                <a href="#" id="btn-sub-section-mod-doctor">Modificar</a>
+                                <a href="#">Eliminar</a>
+                            </td>
+                        <tr>
+                            <td>10419667</td>
+                            <td><img src="" alt="">Angolano Costureiro</td>
+                            <td>28</td>
+                            <td>angxvdvsavascgsdil.com</td>
+                            <td>346654523</td>
+                            <td>masculino</td>
+                            <td>locutor</td>
+                            <td>ytusae</td>
+                            <td>
+                                <a href="#" id="btn-sub-section-mod-doctor">Modificar</a>
+                                <a href="#">Eliminar</a>
+                            </td>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="sub-section-mod-doctor sect">
+            <div class="form-box">
+                <div class="form-value">
+                    <form action="#" class="form" method="post" onsubmit="return false;">
+                        <header>Modificar Doctor</header>
+                        <div class="all">
+                            <div class="left">
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-badge"></i>
+                                        <label class="name">Nombres</label>
+                                        <input type="text" placeholder="Escriba los nombres" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-badge"></i>
+                                        <label class="lastname">Apellidos</label>
+                                        <input type="text" class="lastname-doctor" placeholder="Escriba los apellidos"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-envelope-simple"></i>
+                                        <label class="email">Email</label>
+                                        <input type="email" placeholder="Escriba el Email" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-phone"></i>
+                                        <label class="cel">Celular</label>
+                                        <input type="tel" placeholder="Digite el número de teléfono" required>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-list-magnifying-glass"></i>
+                                        <label class="especial">Especialidad</label>
+                                        <div class="select-box">
+                                            <select>
+                                                <option hidden>Especialidad</option>
+                                                <option>Odontologia</option>
+                                                <option>Psicologia</option>
+                                                <option>Cardiologia</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-first-aid"></i>
+                                        <label class="eps">EPS</label>
+                                        <div class="select-box">
+                                            <select>
+                                                <option hidden>EPS</option>
+                                                <option>NUEVA EPS</option>
+                                                <option>SALUD TOTAL</option>
+                                                <option>MUTUAL SER </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gender-box">
+                                    <h3><i class="ph ph-gender-intersex"></i> Género</h3>
+                                    <div class="gender-option">
+                                        <div class="gender">
+                                            <input type="radio" id="check-male-mod-doctor" name="genderMD" value="M" required>
+                                            <label for="check-male-mod-doctor">Masculino</label>
+                                        </div>
+                                        <div class="gender">
+                                            <input type="radio" id="check-female-mod-doctor" name="genderMD" value="F" required>
+                                            <label for="check-female-mod-doctor">Femenino</label>
+                                        </div>
+                                        <div class="gender">
+                                            <input type="radio" id="check-other-mod-doctor" name="genderMD" value="O" required>
+                                            <label for="check-other-mod-doctor">Otro</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="input-box">
+                                    <i class="ph ph-image"></i>
+                                    <label class="photo">Foto</label>
+                                    <div class="container-img">
+                                        <div class="img-area">
+                                            <i class="ph ph-cloud-arrow-up icon"></i>
+                                            <h3>Foto</h3>
+                                            <img id="uploaded-image-1" src="" alt="">
+                                        </div>
+                                        <input type="file" accept="image/*" id="input-file-1" hidden>
+                                        <div class="box-up-file">
+                                            <label class="up-file-1">Subir Imagen</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button>Modificar Datos</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="section-recep sect">
+            <div class="form-box">
+                <div class="form-value">
+                    <form action="#" class="form" method="post">
+                        <header>Registro de Recepcionistas</header>
+                        <div class="all">
+                            <div class="left">
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-badge"></i>
+                                        <label class="name">Nombres</label>
+                                        <input type="text" placeholder="Escriba el Nombre" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-badge"></i>
+                                        <label class="lastname">Apellidos</label>
+                                        <input type="text" placeholder="Escriba los Apellidos" required>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-card"></i>
+                                        <label class="id">ID</label>
+                                        <input type="number" id="documentoR" placeholder="Número de Documento" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-phone"></i>
+                                        <label class="cel">Celular</label>
+                                        <input type="tel" placeholder="Digite el número de teléfono" required>
+                                    </div>
+                                </div>
+                                <div class="input-box">
+                                    <i class="ph ph-envelope-simple"></i>
+                                    <label class="email">Email</label>
+                                    <input type="email" placeholder="Escriba el Email" required>
+                                </div>
+                                <div class="input-box">
+                                    <i class="ph ph-cake"></i>
+                                    <label class="bthd">Fecha de Nacimiento</label>
+                                    <input type="date" required>
+                                </div>
+                                <div class="gender-box">
+                                    <h3><i class="ph ph-gender-intersex"></i> Género</h3>
+                                    <div class="gender-option">
+                                        <div class="gender">
+                                            <input type="radio" id="check-male-recep" name="genderR" required>
+                                            <label for="check-male-recep">Masculino</label>
+                                        </div>
+                                        <div class="gender">
+                                            <input type="radio" id="check-female-recep" name="genderR" required>
+                                            <label for="check-female-recep">Femenino</label>
+                                        </div>
+                                        <div class="gender">
+                                            <input type="radio" id="check-other-recep" name="genderR" required>
+                                            <label for="check-other-recep">Otro</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="input-box">
+                                    <i class="ph ph-image"></i>
+                                    <label class="photo">Foto</label>
+                                    <div class="container-img">
+                                        <div class="img-area">
+                                            <i class="ph ph-cloud-arrow-up icon"></i>
+                                            <h3>Foto</h3>
+                                            <img id="uploaded-image-2" src="" alt="">
+                                        </div>
+                                        <input type="file" accept="image/*" id="input-file-2" hidden>
+                                        <div class="box-up-file">
+                                            <label class="up-file-2" for="file">Subir Imagen</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button>Registrar Recepcionista</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        
+        </section>
+        <section class="section-mod-recep sect">
+            <div class="table-header">
+                <h1>Datos de Recepcionistas</h1>
+                <div class="input-group-recep">
+                    <input type="search" placeholder="Buscar Recepcionista">
+                    <i class="ph ph-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="table-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Email</th>
+                            <th>Celular</th>
+                            <th>Genero</th>
+                            <th>Datos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10419667</td>
+                            <td><img src="" alt="">Angolano Costureiro</td>
+                            <td>28</td>
+                            <td>angxvdvsavascgsdil.com</td>
+                            <td>346654523</td>
+                            <td>masculino</td>
+                            <td>
+                                <a href="#" id="btn-sub-section-mod-recep">Modificar</a>
+                                <a href="#">Eliminar</a>
+                            </td>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="sub-section-mod-recep sect">
+            <div class="form-box">
+                <div class="form-value">
+                    <form action="#" class="form" method="post" onsubmit="return false;">
+                        <header>Modificar Recepcionista</header>
+                        <div class="all">
+                            <div class="left">
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-badge"></i>
+                                        <label class="name">Nombres</label>
+                                        <input type="text" placeholder="Escriba los nombres" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-identification-badge"></i>
+                                        <label class="lastname">Apellidos</label>
+                                        <input type="text" class="lastname-doctor" placeholder="Escriba los apellidos"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="input-box">
+                                        <i class="ph ph-envelope-simple"></i>
+                                        <label class="email">Email</label>
+                                        <input type="email" placeholder="Escriba el Email" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="ph ph-phone"></i>
+                                        <label class="cel">Celular</label>
+                                        <input type="tel" placeholder="Digite el número de teléfono" required>
+                                    </div>
+                                </div>
+                                <div class="gender-box">
+                                    <h3><i class="ph ph-gender-intersex"></i> Género</h3>
+                                    <div class="gender-option">
+                                        <div class="gender">
+                                            <input type="radio" id="check-male-mod-recep" name="genderMR" value="M" required>
+                                            <label for="check-male-mod-recep">Masculino</label>
+                                        </div>
+                                        <div class="gender">
+                                            <input type="radio" id="check-female-mod-recep" name="genderMR" value="F" required>
+                                            <label for="check-female-mod-recep">Femenino</label>
+                                        </div>
+                                        <div class="gender">
+                                            <input type="radio" id="check-other-mod-recep" name="genderMR" value="O" required>
+                                            <label for="check-other-mod-recep">Otro</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="input-box">
+                                    <i class="ph ph-image"></i>
+                                    <label class="photo">Foto</label>
+                                    <div class="container-img">
+                                        <div class="img-area">
+                                            <i class="ph ph-cloud-arrow-up icon"></i>
+                                            <h3>Foto</h3>
+                                            <img id="uploaded-image-1" src="" alt="">
+                                        </div>
+                                        <input type="file" accept="image/*" id="input-file-1" hidden>
+                                        <div class="box-up-file">
+                                            <label class="up-file-1">Subir Imagen</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button>Modificar Datos</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="section-news sect">
+            <form action="#" class="form" method="post" onsubmit="return false;">
+                <header>Noticias</header>
+                <div class="grid">
+                    <div class="left">
+                        <div class="input-box">
+                            <i class="ph ph-identification-badge"></i>
+                            <label class="name">Titulo</label>
+                            <input type="text" placeholder="Escriba el nombre del titular" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="ph ph-image"></i>
+                            <label class="photo">Imagen</label>
+                            <div class="container-img">
+                                <div class="img-area">
+                                    <i class="ph ph-cloud-arrow-up icon"></i>
+                                    <h3>Imagen</h3>
+                                    <img id="uploaded-image-2" src="" alt="">
+                                </div>
+                                <input type="file" accept="image/*" id="input-file-2" hidden>
+                                <div class="box-up-file">
+                                    <label class="up-file-2" for="file">Subir Imagen</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <i class="ph ph-list-plus"></i>
+                        <label class="cel">Agregar Texto</label><br>
+                        <textarea name="noticia" id="new" placeholder="Pequeña descripción de la noticia" required></textarea>
+                        <br>
+                        <i class="ph ph-link"></i>
+                        <label class="cel">Link</label><br>
+                        <textarea name="link" id="link" placeholder="Enlace referente a la noticia" required></textarea>
+                        <button>Subir Noticia</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
+        integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw=="
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/doctor.js"></script>
+</body>
+
+</html>
