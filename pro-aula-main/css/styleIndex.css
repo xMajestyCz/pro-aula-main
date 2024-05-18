@@ -34,7 +34,7 @@ section{
     left: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 600px;
+    grid-template-rows: 620px;
 }
 .container{
     max-width: 65rem;
@@ -253,6 +253,10 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .form button, .left button{
     height: 55px;
     width: 100%;
@@ -277,8 +281,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .overlay .down .slide-container{
     margin-top: 100px;
-}
-.overlay .slide-container{
     max-width: 1500px;
     width: 100%;
 }

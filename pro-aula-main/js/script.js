@@ -41,11 +41,16 @@ digRec.addEventListener("input", () => {
   }
 });*/
 
-/*const inputFile1 = document.getElementById('input-file-1');
+const inputFile1 = document.getElementById('input-file-1');
 const uploadedImage1 = document.getElementById('uploaded-image-1');
 
 const inputFile2 = document.getElementById('input-file-2');
 const uploadedImage2 = document.getElementById('uploaded-image-2');
+
+const inputFileN = document.getElementById('input-file-n');
+const uploadedImageN = document.getElementById('uploaded-image-n');
+
+
 
 const handleFileChange = (event, imageElement) => {
   const chosenImage = event.target.files[0];
@@ -66,6 +71,7 @@ const handleFileChange = (event, imageElement) => {
 
 inputFile1.addEventListener('change', (event) => handleFileChange(event, uploadedImage1));
 inputFile2.addEventListener('change', (event) => handleFileChange(event, uploadedImage2));
+inputFileN.addEventListener('change', (event) => handleFileChange(event, uploadedImageN));
 
 // Add click event listeners to the labels for a better user experience
 const uploadLabel1 = document.querySelector('.up-file-1');
@@ -76,7 +82,12 @@ uploadLabel1.addEventListener('click', () => {
 const uploadLabel2 = document.querySelector('.up-file-2');
 uploadLabel2.addEventListener('click', () => {
   inputFile2.click();
-});*/
+});
+
+const uploadLabelN = document.querySelector('.up-file-n');
+uploadLabelN.addEventListener('click', () => {
+  inputFileN.click();
+});
 
 const sectionButtonD = document.getElementById('btn-section-add-doctor');
 const sectionButtonMD = document.getElementById('btn-section-mod-doctor');
@@ -85,6 +96,7 @@ const sectionButtonR = document.getElementById('btn-section-add-recep');
 const sectionButtonMR = document.getElementById('btn-section-mod-recep');
 const sectionButtonMR2 = document.getElementById('btn-sub-section-mod-recep');
 const sectionButtonN = document.getElementById('btn-section-news');
+const sectionButtonND = document.getElementById('btn-section-news-delete');
 const sectionD = document.querySelector('.section-doctor');
 const sectionMD = document.querySelector('.section-mod-doctor');
 const sectionMD2 = document.querySelector('.sub-section-mod-doctor');
@@ -92,8 +104,9 @@ const sectionR = document.querySelector('.section-recep');
 const sectionMR = document.querySelector('.section-mod-recep');
 const sectionMR2 = document.querySelector('.sub-section-mod-recep');
 const sectionN = document.querySelector('.section-news');
+const sectionND = document.querySelector('.section-news-delete');
 
-[sectionButtonD, sectionButtonMD, sectionButtonMD2, sectionButtonR, sectionButtonMR, sectionButtonMR2, sectionButtonN].forEach(button => {
+[sectionButtonD, sectionButtonMD, sectionButtonMD2, sectionButtonR, sectionButtonMR, sectionButtonMR2, sectionButtonN, sectionButtonND].forEach(button => {
   button.addEventListener('click', (event) => {
     event.preventDefault();
     if (button === sectionButtonD) {
@@ -131,6 +144,11 @@ const sectionN = document.querySelector('.section-news');
     } else {
       sectionN.classList.remove('visible');
     }
+    if (button === sectionButtonND) {
+      sectionND.classList.add('visible');
+    } else {
+      sectionND.classList.remove('visible');
+    }
   });
 });
 
@@ -158,3 +176,32 @@ setupSearch('.input-group-doctor input', tableRowsD);
 
 const tableRowsR = document.querySelectorAll('tbody tr');
 setupSearch('.input-group-recep input', tableRowsR);
+
+
+let uploadedImageSrc = '';
+
+document.getElementById('up-new').addEventListener('click', function() {
+  // Obtener el valor del campo de entrada
+  var title = document.getElementById('title').value;
+  // Obtener el texto del textarea
+  var newContent = document.getElementById('new').value;
+  var link = document.getElementById('link').value;
+  var imgSrc = document.getElementById('uploaded-image-n').src;
+
+  // Obtener los elementos de jSwiper ya creados (si los hay)
+  var swiperSlides = JSON.parse(localStorage.getItem('swiperSlides')) || [];
+
+  // Agregar el nuevo elemento a la lista de elementos de jSwiper
+  swiperSlides.push({
+      title: title,
+      content: newContent,
+      link: link,
+      imgSrc: imgSrc
+  });
+
+  // Guardar los elementos de jSwiper en localStorage
+  localStorage.setItem('swiperSlides', JSON.stringify(swiperSlides));
+
+  //limpiar campos
+  document.getElementById('uploaded-image-n').src = '';
+});

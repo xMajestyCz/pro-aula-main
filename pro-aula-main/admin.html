@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css" />
     <meta http-equiv="Cache-Control" content="max-age=31536000">
     <title>Administrador</title>
@@ -90,7 +91,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="#" id="btn-section-news-delete">
                                         <i class="icon ph-bold ph-trash"></i>
                                         <span class="text">Eliminar</span>
                                     </a>
@@ -268,7 +269,7 @@
                             <td>10419667</td>
                             <td><img src="" alt="">Angolano Costureiro</td>
                             <td>28</td>
-                            <td>angxvdvsavascgsdil.com</td>
+                            <td>angxvdvsavascgsdikjrhsbgkjhdbsvhjfdsbkivhrbvhkjarbkjhvrrgaegrgrl.com</td>
                             <td>346654523</td>
                             <td>masculino</td>
                             <td>locutor</td>
@@ -499,7 +500,6 @@
                         </div>
                     </form>
                 </div>
-        
         </section>
         <section class="section-mod-recep sect">
             <div class="table-header">
@@ -612,14 +612,14 @@
             </div>
         </section>
         <section class="section-news sect">
-            <form action="#" class="form" method="post" onsubmit="return false;">
+            <form action="#" class="form" method="post">
                 <header>Noticias</header>
                 <div class="grid">
                     <div class="left">
                         <div class="input-box">
                             <i class="ph ph-identification-badge"></i>
                             <label class="name">Titulo</label>
-                            <input type="text" placeholder="Escriba el nombre del titular" required>
+                            <input type="text" id="title" maxlength="300" placeholder="Escriba el nombre del titular" required>
                         </div>
                         <div class="input-box">
                             <i class="ph ph-image"></i>
@@ -628,11 +628,11 @@
                                 <div class="img-area">
                                     <i class="ph ph-cloud-arrow-up icon"></i>
                                     <h3>Imagen</h3>
-                                    <img id="uploaded-image-2" src="" alt="">
+                                    <img id="uploaded-image-n" src="" alt="">
                                 </div>
-                                <input type="file" accept="image/*" id="input-file-2" hidden>
+                                <input type="file" accept="image/*" id="input-file-n" hidden>
                                 <div class="box-up-file">
-                                    <label class="up-file-2" for="file">Subir Imagen</label>
+                                    <label class="up-file-n" for="file">Subir Imagen</label>
                                 </div>
                             </div>
                         </div>
@@ -640,14 +640,19 @@
                     <div class="right">
                         <i class="ph ph-list-plus"></i>
                         <label class="cel">Agregar Texto</label><br>
-                        <textarea name="noticia" id="new" placeholder="Pequeña descripción de la noticia" required></textarea>
+                        <textarea name="noticia" id="new" maxlength="300" placeholder="Pequeña descripción de la noticia" required></textarea>
                         <br>
                         <i class="ph ph-link"></i>
                         <label class="cel">Link</label><br>
                         <textarea name="link" id="link" placeholder="Enlace referente a la noticia" required></textarea>
-                        <button>Subir Noticia</button>
+                        <button id="up-new">Subir Noticia</button>
                     </div>
                 </div>
+            </form>
+        </section>
+        <section class="section-news-delete sect">
+            <form action="#" class="form" method="post">
+                <header>Eliminar Noticias</header>
             </form>
         </section>
     </div>
@@ -655,8 +660,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
         integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw=="
         crossorigin="anonymous"></script>
+    <script src="js/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/doctor.js"></script>
 </body>
-
 </html>

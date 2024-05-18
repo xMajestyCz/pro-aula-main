@@ -199,6 +199,9 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+input[type=number] {
+    -moz-appearance: textfield;
+}
 
 section{
     margin: 200px;
@@ -319,7 +322,7 @@ section .form{
     align-items: center;
     flex-direction: column;
 }
-#uploaded-image-1, #uploaded-image-2 {
+#uploaded-image-1, #uploaded-image-2 , #uploaded-image-n{
     display: none;
 }  
 .img-area img{
@@ -535,6 +538,8 @@ textarea{
     border-radius: 6px;
     resize: none;
 }
+
+
 
 
 

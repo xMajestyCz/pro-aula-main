@@ -1,3 +1,11 @@
+const digAfi = document.getElementById("documentoA");
+
+digAfi.addEventListener("input", () => {
+    if (digAfi.value.length > 10) {
+        digAfi.value = digAfi.value.slice(0, 10);
+    }
+});
+
 var swiper = new Swiper(".slide-content", {
     slidesPerView: 4,
     spaceBetween: 30,
@@ -31,11 +39,37 @@ var swiper = new Swiper(".slide-content", {
     },
 });
 
-const digAfi = document.getElementById("documentoA");
 
-digAfi.addEventListener("input", () => {
-    if (digAfi.value.length > 10) {
-        digAfi.value = digAfi.value.slice(0, 10);
+window.onload = function() {
+    const imgSrc = localStorage.getItem('uploadedImage');
+    if (imgSrc) {
+        document.getElementById('displayedImage').src = imgSrc;
+    } else {
+        alert('No hay imagen cargada.');
     }
-});
+};
 
+
+// Insertar los elementos de jSwiper en la página al cargar
+document.addEventListener('DOMContentLoaded', function() {
+    var swiperSlides = JSON.parse(localStorage.getItem('swiperSlides')) || [];
+    var swiperWrapper = document.querySelector('.swiper-wrapper');
+    swiperSlides.forEach(function(slide) {
+        var swiperSlideHTML = `
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay-img"></span>
+                    <div class="card-image">
+                        <img src="${slide.imgSrc}" alt="" class="card-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h2 class="name">${slide.title}</h2>
+                    <p class="description">${slide.content}</p>
+                    <a href="${slide.link}" target="_blank"><button class="button">Conoce más</button></a>
+                </div>
+            </div>
+        `;
+        swiperWrapper.innerHTML += swiperSlideHTML;
+    });
+});
