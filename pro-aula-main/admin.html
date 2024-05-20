@@ -619,7 +619,7 @@
                         <div class="input-box">
                             <i class="ph ph-identification-badge"></i>
                             <label class="name">Titulo</label>
-                            <input type="text" id="title" maxlength="300" placeholder="Escriba el nombre del titular" required>
+                            <input type="text" id="title" maxlength="75" placeholder="Escriba el nombre del titular" required>
                         </div>
                         <div class="input-box">
                             <i class="ph ph-image"></i>
@@ -640,7 +640,7 @@
                     <div class="right">
                         <i class="ph ph-list-plus"></i>
                         <label class="cel">Agregar Texto</label><br>
-                        <textarea name="noticia" id="new" maxlength="300" placeholder="Pequeña descripción de la noticia" required></textarea>
+                        <textarea name="noticia" id="new" maxlength="250" placeholder="Pequeña descripción de la noticia" required></textarea>
                         <br>
                         <i class="ph ph-link"></i>
                         <label class="cel">Link</label><br>
@@ -651,9 +651,29 @@
             </form>
         </section>
         <section class="section-news-delete sect">
-            <form action="#" class="form" method="post">
-                <header>Eliminar Noticias</header>
-            </form>
+            <header>Eliminar Noticias</header>
+            <div class="slide-container swiper">
+                <div class="slide-content">
+                    <div class="card-wrapper swiper-wrapper">
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay-img"></span>
+                                <div class="card-image">
+                                    <img src="/profile.png" alt="" class="card-img">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="name">u</h2>
+                                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, autem numquam voluptatem quis totam ipsum expedita similique mollitia nemo deleniti voluptates sint labore vero odit eligendi asperiores reiciendis! Corporis, dolorem.</p>
+                                <button class="button">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="swiper-pagination"></div>
+            </div>
         </section>
     </div>
     <!-- Jquery -->

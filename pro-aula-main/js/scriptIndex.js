@@ -73,3 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
         swiperWrapper.innerHTML += swiperSlideHTML;
     });
 });
+
+// Función para actualizar los índices de las noticias
+function updateIndices() {
+    document.querySelectorAll('.swiper-slide').forEach((slide, newIndex) => {
+        slide.setAttribute('data-index', newIndex);
+        slide.querySelector('.delete-button').setAttribute('data-index', newIndex);
+    });
+}

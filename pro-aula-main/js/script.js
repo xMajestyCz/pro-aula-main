@@ -205,3 +205,82 @@ document.getElementById('up-new').addEventListener('click', function() {
   //limpiar campos
   document.getElementById('uploaded-image-n').src = '';
 });
+
+var swiper = new Swiper(".slide-content", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  slidesPerGroup: 1,
+  loop: true,
+  centerSlide: 'true',
+  fade: 'true',
+  grabCursor: 'true',
+  pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+  },
+  navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+      0: {
+          slidesPerView: 1,
+      },
+      500: {
+          slidesPerView: 2,
+      }, 
+      1000: {
+          slidesPerView: 3,
+      }, 
+  },
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  var swiperSlides = JSON.parse(localStorage.getItem('swiperSlides')) || [];
+  var swiperWrapper = document.querySelector('.swiper-wrapper');
+
+  // Función para agregar una noticia a la interfaz
+  function addSlideToSwiper(slide, index) {
+      var swiperSlideHTML = `
+          <div class="card swiper-slide" data-index="${index}">
+              <div class="image-content">
+                  <span class="overlay-img"></span>
+                  <div class="card-image">
+                      <img src="${slide.imgSrc}" alt="" class="card-img">
+                  </div>
+              </div>
+              <div class="card-content">
+                  <h2 class="name">${slide.title}</h2>
+                  <p class="description">${slide.content}</p>
+                  <button class="button delete-button" data-index="${index}">Eliminar</button>
+              </div>
+          </div>
+      `;
+      swiperWrapper.innerHTML += swiperSlideHTML;
+  }
+
+  // Insertar los elementos de jSwiper en la página
+  swiperSlides.forEach(function(slide, index) {
+      addSlideToSwiper(slide, index);
+  });
+
+  // Evento para manejar la eliminación de una noticia
+  document.querySelector('.swiper-wrapper').addEventListener('click', function(event) {
+      if (event.target.classList.contains('delete-button')) {
+          var index = event.target.getAttribute('data-index');
+          deleteSlide(index);
+      }
+  });
+
+  // Función para eliminar una noticia
+  function deleteSlide(index) {
+      var swiperSlides = JSON.parse(localStorage.getItem('swiperSlides')) || [];
+      swiperSlides.splice(index, 1);
+      localStorage.setItem('swiperSlides', JSON.stringify(swiperSlides));
+      document.querySelector(`.swiper-slide[data-index="${index}"]`).remove();
+
+      // Actualizar Swiper
+      swiper.update();
+  }
+});

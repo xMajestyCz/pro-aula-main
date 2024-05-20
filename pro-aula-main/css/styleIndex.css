@@ -318,9 +318,9 @@ input[type=number] {
     content: '';
     position: absolute;
     right: 0;
-    bottom: -40px;
-    height: 40px;
-    width: 40px;
+    bottom: -20px;
+    height: 20px;
+    width: 20px;
     background-color: #4070F4;
 }
 .overlay-img::after{
@@ -336,9 +336,8 @@ input[type=number] {
     padding: 3px;
 }
 .card-image .card-img{
-    height: 100%;
+    max-height: 250px;
     width: 100%;
-    object-fit: cover;
     border-radius: 6px;
     border: 4px solid #ecf1ff;
 }
@@ -346,11 +345,18 @@ input[type=number] {
     font-size: 18px;
     font-weight: 500;
     color: #333;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word; 
 }
 .description{
     font-size: 14px;
     color: #707070;
     text-align: center;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word; 
 }
 .button{
     border: none;
