@@ -27,7 +27,7 @@ $("#btn-cerrar").click(function () {
 });
 
 
-/*const digDoc = document.getElementById("documentoD");
+const digDoc = document.getElementById("documentoD");
 const digRec = document.getElementById("documentoR");
 
 digDoc.addEventListener("input", () => {
@@ -39,7 +39,7 @@ digRec.addEventListener("input", () => {
   if (digRec.value.length > 10) {
     digRec.value = digRec.value.slice(0, 10);
   }
-});*/
+});
 
 const inputFile1 = document.getElementById('input-file-1');
 const uploadedImage1 = document.getElementById('uploaded-image-1');
@@ -283,4 +283,87 @@ document.addEventListener('DOMContentLoaded', function() {
       // Actualizar Swiper
       swiper.update();
   }
+});
+
+
+const formD = document.getElementById('formD');
+const formMD = document.getElementById('formMD');
+const formR = document.getElementById('formR');
+const formMR = document.getElementById('formMR');
+const formN = document.getElementById('formN');
+const logOut = document.getElementById('log-out');
+const popupContainerCR = document.querySelector('.popup-container-close-reg');
+const popupContainerCM = document.querySelector('.popup-container-close-mod');
+const popupContainerCN = document.querySelector('.popup-container-close-add-new');
+const popupContainerLO = document.querySelector('.popup-container-log-out');
+const closeBtnD = document.querySelector('.close-btn-doc');
+const closeBtnR = document.querySelector('.close-btn-recep');
+const closeBtnMD = document.querySelector('.close-btn-mod-doc');
+const closeBtnMR = document.querySelector('.close-btn-mod-recep');
+const closeBtnN = document.querySelector('.close-btn-add-new');
+const closeBtnLO = document.querySelector('.close-btn-no-out');
+
+formD.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita el envío del formulario
+    // Verifica que los campos obligatorios estén llenos
+    const id = formD.elements['id'].value;
+    
+    if (id.trim()) {
+        popupContainerCR.classList.add('active'); // Muestra el popup
+    }
+});
+closeBtnD.addEventListener('click', function() {
+  popupContainerCR.classList.remove('active'); // Oculta el popup
+  formD.submit();
+});
+
+formMD.addEventListener('submit', function(event) {
+  event.preventDefault();
+  popupContainerCM.classList.add('active');
+});
+closeBtnMD.addEventListener('click', function() {
+  popupContainerCM.classList.remove('active'); // Oculta el popup
+  formMD.submit();
+});
+
+formR.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const id = formR.elements['id'].value;
+    
+    if (id.trim()) {
+        popupContainerCR.classList.add('active');
+    }
+});
+closeBtnR.addEventListener('click', function() {
+  popupContainerCR.classList.remove('active'); // Oculta el popup
+  formR.submit();
+});
+
+formMR.addEventListener('submit', function(event) {
+  event.preventDefault();
+  popupContainerCM.classList.add('active');
+});
+closeBtnMR.addEventListener('click', function() {
+  popupContainerCM.classList.remove('active');
+  formMR.submit();
+});
+
+formN.addEventListener('submit', function(event) {
+  event.preventDefault();
+  const title = formN.elements['title'].value;
+    
+    if (title.trim()) {
+        popupContainerCN.classList.add('active');
+    }
+});
+closeBtnN.addEventListener('click', function() {
+  popupContainerCN.classList.remove('active');
+  formN.submit();
+});
+
+logOut.addEventListener('click', function() {
+  popupContainerLO.classList.add('active');
+});
+closeBtnLO.addEventListener('click', function() {
+  popupContainerLO.classList.remove('active');
 });

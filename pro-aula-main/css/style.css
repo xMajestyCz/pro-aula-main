@@ -657,6 +657,70 @@ textarea{
     background-color: #4070F4;
 }
 
+.popup-container-close-reg, .popup-container-close-mod, .popup-container-close-add-new, .popup-container-close-new-del, .popup-container-log-out{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+.popup-container-close-reg.active, .popup-container-close-mod.active, .popup-container-close-add-new.active, .popup-container-close-new-del.active, .popup-container-log-out.active{
+    opacity: 1;
+    pointer-events: auto;
+    transition: .4s ease;
+}
+.window .popup-box{
+    width: 500px;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    padding: 30px;
+    text-align: center;
+}
+.popup-container-close-reg.active .popup-box, .popup-container-close-mod.active .popup-box, .popup-container-close-new-add.active .popup-box, .popup-container-close-new-del.active .popup-box, .popup-container-log-out.active .popup-box{
+    transform: scale(1);
+    transition: .4s ease;
+    transition-delay: .25s;
+}
+.popup-box p{
+    color: #333;
+    margin: 12px 0 20px;
+}
+.popup-box .close-btn, .popup-box a{
+    width: 100%;
+    height: 45px;
+    background-color: rgb(55, 132, 199);
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 18px;
+    color: #f2f2f2;
+    font-weight: 500;
+}
+
+.popup-box .close-btn:hover{
+    background-color: rgb(32, 95, 159);
+    transition: all .2s ease;
+}
+.popup-box a .close-btn{
+    background: rgb(214, 70, 70);
+}
+.popup-box a .close-btn:hover {
+    background-color: rgb(199, 57, 57);
+    transition: all .2s ease;
+}
+.popup-container-log-out .flex{
+    display: flex;
+    justify-content: space-between;
+}
+.popup-container-log-out .flex .close-btn-no-out, .popup-container-log-out .flex a{
+    width: 45%;
+}
 
 
 .modalmask {

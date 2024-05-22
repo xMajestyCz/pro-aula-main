@@ -122,7 +122,7 @@
                 <p class="title">Cuenta</p>
                 <ul>
                     <li>
-                        <a href="index.html">
+                        <a href="#" id="log-out">
                             <i class="icon ph-bold ph-sign-out"></i>
                             <span class="text">Cerrar Sesión</span>
                         </a>
@@ -133,7 +133,7 @@
         <section class="section-doctor sect">
             <div class="form-box">
                 <div class="form-value">
-                    <form action="#" class="form" method="post" onsubmit="return false;">
+                    <form action="#" class="form" id="formD" method="post">
                         <header>Registrar Doctor</header>
                         <div class="all">
                             <div class="left">
@@ -141,12 +141,12 @@
                                     <div class="input-box">
                                         <i class="ph ph-identification-badge"></i>
                                         <label class="name">Nombres</label>
-                                        <input type="text" placeholder="Escriba los nombres" required>
+                                        <input type="text" name="name"placeholder="Escriba los nombres" required>
                                     </div>
                                     <div class="input-box">
                                         <i class="ph ph-identification-badge"></i>
                                         <label class="lastname">Apellidos</label>
-                                        <input type="text" class="lastname-doctor" placeholder="Escriba los apellidos"
+                                        <input type="text" name="lastname" placeholder="Escriba los apellidos"
                                             required>
                                     </div>
                                 </div>
@@ -154,24 +154,24 @@
                                     <div class="input-box">
                                         <i class="ph ph-identification-card"></i>
                                         <label class="id">ID</label>
-                                        <input type="number" id="documentoD" placeholder="Número de Documento" required>
+                                        <input type="number" id="documentoD" name="id" placeholder="Número de Documento" required>
                                     </div>
                                     <div class="input-box">
                                         <i class="ph ph-cake"></i>
                                         <label class="bthd">Fecha de Nacimiento</label>
-                                        <input type="date" required>
+                                        <input type="date" name="birth" required>
                                     </div>
                                 </div>
                                 <div class="column">
                                     <div class="input-box">
                                         <i class="ph ph-envelope-simple"></i>
                                         <label class="email">Email</label>
-                                        <input type="email" placeholder="Escriba el Email" required>
+                                        <input type="email" name="email" placeholder="Escriba el Email" required>
                                     </div>
                                     <div class="input-box">
                                         <i class="ph ph-phone"></i>
                                         <label class="cel">Celular</label>
-                                        <input type="tel" placeholder="Digite el número de teléfono" required>
+                                        <input type="tel" name="cel" placeholder="Digite el número de teléfono" required>
                                     </div>
                                 </div>
                                 <div class="column">
@@ -230,11 +230,11 @@
                                         </div>
                                         <input type="file" accept="image/*" id="input-file-1" hidden>
                                         <div class="box-up-file">
-                                            <label class="up-file-1"  >Subir Imagen</label>
+                                            <label class="up-file-1">Subir Imagen</label>
                                         </div>
                                     </div>
                                 </div>
-                                <button onclick="cogerDatos()">Registrar Doctor</button>
+                                <button type="submit" class="add-doctor">Registrar Doctor</button>
                             </div>
                         </div>
                     </form>
@@ -324,7 +324,7 @@
         <section class="sub-section-mod-doctor sect">
             <div class="form-box">
                 <div class="form-value">
-                    <form action="#" class="form" method="post" onsubmit="return false;">
+                    <form action="#" class="form" id="formMD" method="post">
                         <header>Modificar Doctor</header>
                         <div class="all">
                             <div class="left">
@@ -332,25 +332,24 @@
                                     <div class="input-box">
                                         <i class="ph ph-identification-badge"></i>
                                         <label class="name">Nombres</label>
-                                        <input type="text" placeholder="Escriba los nombres" required>
+                                        <input type="text" placeholder="Escriba los nombres">
                                     </div>
                                     <div class="input-box">
                                         <i class="ph ph-identification-badge"></i>
                                         <label class="lastname">Apellidos</label>
-                                        <input type="text" class="lastname-doctor" placeholder="Escriba los apellidos"
-                                            required>
+                                        <input type="text" class="lastname-doctor" placeholder="Escriba los apellidos">
                                     </div>
                                 </div>
                                 <div class="column">
                                     <div class="input-box">
                                         <i class="ph ph-envelope-simple"></i>
                                         <label class="email">Email</label>
-                                        <input type="email" placeholder="Escriba el Email" required>
+                                        <input type="email" name="email" placeholder="Escriba el Email">
                                     </div>
                                     <div class="input-box">
                                         <i class="ph ph-phone"></i>
                                         <label class="cel">Celular</label>
-                                        <input type="tel" placeholder="Digite el número de teléfono" required>
+                                        <input type="tel" name="cel" placeholder="Digite el número de teléfono">
                                     </div>
                                 </div>
                                 <div class="column">
@@ -383,15 +382,15 @@
                                     <h3><i class="ph ph-gender-intersex"></i> Género</h3>
                                     <div class="gender-option">
                                         <div class="gender">
-                                            <input type="radio" id="check-male-mod-doctor" name="genderMD" value="M" required>
+                                            <input type="radio" id="check-male-mod-doctor" name="genderMD" value="M">
                                             <label for="check-male-mod-doctor">Masculino</label>
                                         </div>
                                         <div class="gender">
-                                            <input type="radio" id="check-female-mod-doctor" name="genderMD" value="F" required>
+                                            <input type="radio" id="check-female-mod-doctor" name="genderMD" value="F">
                                             <label for="check-female-mod-doctor">Femenino</label>
                                         </div>
                                         <div class="gender">
-                                            <input type="radio" id="check-other-mod-doctor" name="genderMD" value="O" required>
+                                            <input type="radio" id="check-other-mod-doctor" name="genderMD" value="O">
                                             <label for="check-other-mod-doctor">Otro</label>
                                         </div>
                                     </div>
@@ -423,7 +422,7 @@
         <section class="section-recep sect">
             <div class="form-box">
                 <div class="form-value">
-                    <form action="#" class="form" method="post">
+                    <form action="#" class="form" id="formR" method="post">
                         <header>Registro de Recepcionistas</header>
                         <div class="all">
                             <div class="left">
@@ -443,7 +442,7 @@
                                     <div class="input-box">
                                         <i class="ph ph-identification-card"></i>
                                         <label class="id">ID</label>
-                                        <input type="number" id="documentoR" placeholder="Número de Documento" required>
+                                        <input type="number" id="documentoR" name="id" placeholder="Número de Documento" required>
                                     </div>
                                     <div class="input-box">
                                         <i class="ph ph-phone"></i>
@@ -495,7 +494,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button>Registrar Recepcionista</button>
+                                <button class="add-recep">Registrar Recepcionista</button>
                             </div>
                         </div>
                     </form>
@@ -541,7 +540,7 @@
         <section class="sub-section-mod-recep sect">
             <div class="form-box">
                 <div class="form-value">
-                    <form action="#" class="form" method="post" onsubmit="return false;">
+                    <form action="#" class="form" id="formMR" method="post">
                         <header>Modificar Recepcionista</header>
                         <div class="all">
                             <div class="left">
@@ -549,40 +548,39 @@
                                     <div class="input-box">
                                         <i class="ph ph-identification-badge"></i>
                                         <label class="name">Nombres</label>
-                                        <input type="text" placeholder="Escriba los nombres" required>
+                                        <input type="text" placeholder="Escriba los nombres">
                                     </div>
                                     <div class="input-box">
                                         <i class="ph ph-identification-badge"></i>
                                         <label class="lastname">Apellidos</label>
-                                        <input type="text" class="lastname-doctor" placeholder="Escriba los apellidos"
-                                            required>
+                                        <input type="text" class="lastname-doctor" placeholder="Escriba los apellidos">
                                     </div>
                                 </div>
                                 <div class="column">
                                     <div class="input-box">
                                         <i class="ph ph-envelope-simple"></i>
                                         <label class="email">Email</label>
-                                        <input type="email" placeholder="Escriba el Email" required>
+                                        <input type="email" placeholder="Escriba el Email">
                                     </div>
                                     <div class="input-box">
                                         <i class="ph ph-phone"></i>
                                         <label class="cel">Celular</label>
-                                        <input type="tel" placeholder="Digite el número de teléfono" required>
+                                        <input type="tel" placeholder="Digite el número de teléfono">
                                     </div>
                                 </div>
                                 <div class="gender-box">
                                     <h3><i class="ph ph-gender-intersex"></i> Género</h3>
                                     <div class="gender-option">
                                         <div class="gender">
-                                            <input type="radio" id="check-male-mod-recep" name="genderMR" value="M" required>
+                                            <input type="radio" id="check-male-mod-recep" name="genderMR" value="M">
                                             <label for="check-male-mod-recep">Masculino</label>
                                         </div>
                                         <div class="gender">
-                                            <input type="radio" id="check-female-mod-recep" name="genderMR" value="F" required>
+                                            <input type="radio" id="check-female-mod-recep" name="genderMR" value="F">
                                             <label for="check-female-mod-recep">Femenino</label>
                                         </div>
                                         <div class="gender">
-                                            <input type="radio" id="check-other-mod-recep" name="genderMR" value="O" required>
+                                            <input type="radio" id="check-other-mod-recep" name="genderMR" value="O">
                                             <label for="check-other-mod-recep">Otro</label>
                                         </div>
                                     </div>
@@ -612,14 +610,14 @@
             </div>
         </section>
         <section class="section-news sect">
-            <form action="#" class="form" method="post">
+            <form action="#" class="form" id="formN" method="post">
                 <header>Noticias</header>
                 <div class="grid">
                     <div class="left">
                         <div class="input-box">
                             <i class="ph ph-identification-badge"></i>
                             <label class="name">Titulo</label>
-                            <input type="text" id="title" maxlength="75" placeholder="Escriba el nombre del titular" required>
+                            <input type="text" id="title" maxlength="75" name="title" placeholder="Escriba el nombre del titular" required>
                         </div>
                         <div class="input-box">
                             <i class="ph ph-image"></i>
@@ -640,12 +638,12 @@
                     <div class="right">
                         <i class="ph ph-list-plus"></i>
                         <label class="cel">Agregar Texto</label><br>
-                        <textarea name="noticia" id="new" maxlength="250" placeholder="Pequeña descripción de la noticia" required></textarea>
+                        <textarea name="noticia" id="new" maxlength="250" name="txt" placeholder="Pequeña descripción de la noticia" required></textarea>
                         <br>
                         <i class="ph ph-link"></i>
                         <label class="cel">Link</label><br>
                         <textarea name="link" id="link" placeholder="Enlace referente a la noticia" required></textarea>
-                        <button id="up-new">Subir Noticia</button>
+                        <button type="submit" id="up-new">Subir Noticia</button>
                     </div>
                 </div>
             </form>
@@ -655,19 +653,6 @@
             <div class="slide-container swiper">
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper">
-                        <div class="card swiper-slide">
-                            <div class="image-content">
-                                <span class="overlay-img"></span>
-                                <div class="card-image">
-                                    <img src="/profile.png" alt="" class="card-img">
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <h2 class="name">u</h2>
-                                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, autem numquam voluptatem quis totam ipsum expedita similique mollitia nemo deleniti voluptates sint labore vero odit eligendi asperiores reiciendis! Corporis, dolorem.</p>
-                                <button class="button">Eliminar</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="swiper-button-next swiper-navBtn"></div>
@@ -675,6 +660,51 @@
                 <div class="swiper-pagination"></div>
             </div>
         </section>
+        <div class="window popup-container-close-reg">
+            <div class="popup-box">
+                <p>¡Los datos han sido registrados correctamente!</p>
+                <button class="close-btn close-btn-doc">Cerrar</button>
+            </div>
+        </div>
+        <div class="window popup-container-close-reg">
+            <div class="popup-box">
+                <p>¡Los datos han sido registrados correctamente!</p>
+                <button class="close-btn close-btn-recep">Cerrar</button>
+            </div>
+        </div>
+        <div class="window popup-container-close-mod">
+            <div class="popup-box">
+                <p>¡Los datos han sido modificados correctamente!</p>
+                <button class="close-btn close-btn-mod-doc">Cerrar</button>
+            </div>
+        </div>
+        <div class="window popup-container-close-mod">
+            <div class="popup-box">
+                <p>¡Los datos han sido modificados correctamente!</p>
+                <button class="close-btn close-btn-mod-recep">Cerrar</button>
+            </div>
+        </div>
+        <div class="window popup-container-close-add-new">
+            <div class="popup-box">
+                <p>¡La noticia ha sido publicada correctamente!</p>
+                <button class="close-btn close-btn-add-new">Cerrar</button>
+            </div>
+        </div>
+        <div class="window popup-container-close-new-del">
+            <div class="popup-box">
+                <p>¡La noticia ha sido eliminada correctamente!</p>
+                <button class="close-btn close-btn-del-new">Cerrar</button>
+            </div>
+        </div>
+        <div class="window popup-container-log-out">
+            <div class="popup-box">
+                <p>¿Seguro que quiere finalizar la sesión?</p>
+                <div class="flex">
+                    <a href="index.html"><button class="close-btn log-out-btn">Si</button></a>
+                    <button class="close-btn close-btn-no-out">No</button>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
