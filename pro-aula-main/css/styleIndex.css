@@ -395,16 +395,38 @@ input[type=number] {
 .swiper-pagination.bullet-active{
     background-color: #4070F4;
 }
-footer{
+footer {
     position: relative;
     align-content: center;
-    bottom: 0;
-    height: 150px;
-    background-color: #d3cdcd;
+    height: 200px;
+    background-color: #bcb3b3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
 }
-footer .info{
+footer .info {
     margin-left: 50px;
+    flex: 1;
 }
+footer .info h2, footer .info h3 {
+    pointer-events: none;
+}
+footer .info h3:not(:last-child), footer .info i:not(:last-child) {
+    display: block;
+    margin-bottom: 10px;
+}
+footer .info i span {
+    margin-left: 5px;
+}
+footer .copyright {
+    background: #656464;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
 @keyframes animation{
     from{
         opacity: 0;

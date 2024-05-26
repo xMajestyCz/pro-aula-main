@@ -313,7 +313,7 @@ formD.addEventListener('submit', function(event) {
     }
 });
 closeBtnD.addEventListener('click', function() {
-  popupContainerCR.classList.remove('active'); // Oculta el popup
+  popupContainerCR.classList.remove('active');
   formD.submit();
 });
 
@@ -322,7 +322,7 @@ formMD.addEventListener('submit', function(event) {
   popupContainerCM.classList.add('active');
 });
 closeBtnMD.addEventListener('click', function() {
-  popupContainerCM.classList.remove('active'); // Oculta el popup
+  popupContainerCM.classList.remove('active');
   formMD.submit();
 });
 
